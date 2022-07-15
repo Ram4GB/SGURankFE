@@ -23,11 +23,21 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      }
+          {
+            loader: 'vue-style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ]
   },
   plugins: [

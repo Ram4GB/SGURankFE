@@ -1,4 +1,15 @@
+// I tested to override Element plus successfully
+// https://element-plus.org/en-US/guide/theming.html#how-to-override-it
+
+// @forward 'element-plus/theme-chalk/src/common/var.scss' with (
+//   $colors: (
+//     'primary': (
+//       'base': green,
+//     ),
+//   )
+// );
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import 'element-plus/theme-chalk/src/index.scss';
 
 * {
   font-family: 'Source Code Pro', monospace;
