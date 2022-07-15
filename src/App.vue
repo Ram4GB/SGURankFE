@@ -1,19 +1,17 @@
 <template>
-  <div>App</div>
-  <img :src="logo" alt="">
-  <el-button plain type="primary" v-text="123" />
+  <default>
+    <router-view></router-view>
+  </default>
 </template>
 
 <script>
-import logo from './assets/images/logo.svg';
+import Default from './components/Default.vue';
 
 export default {
   name: 'App',
-  data: function() {
-    return {
-      logo
-    }
-  }
+  components: {
+    Default,
+  },
 }
 </script>
 
