@@ -1,0 +1,21 @@
+{
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "block-spacing": "error",
+    "prefer-arrow-callback": "error",
+    "arrow-parens": "error",
+    "eqeqeq": "error"
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "ignorePatterns": ["node_modules/**/*", "webpack.config.js", "src/data/**/*"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2015
+  }
+}
