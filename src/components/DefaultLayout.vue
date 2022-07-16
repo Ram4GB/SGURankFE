@@ -2,7 +2,11 @@
   <div class="container">
     <div class="header">
       <router-link to="/">
-        <img class="logo" :src="logo" alt="">
+        <img
+          class="logo"
+          :src="logo"
+          alt=""
+        >
       </router-link>
     </div>
     <el-main>
@@ -18,9 +22,9 @@ export default {
   setup() {
     return {
       logo
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang='scss' scoped>

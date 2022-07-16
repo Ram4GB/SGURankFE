@@ -1,24 +1,27 @@
 <template>
-  <default>
+  <default-layout>
     <router-view v-slot="{ Component }">
       <keep-alive>
-        <transition appear name="fade">
-            <component :is="Component" />
+        <transition
+          appear
+          name="fade"
+        >
+          <component :is="Component" />
         </transition>
       </keep-alive>
     </router-view>
-  </default>
+  </default-layout>
 </template>
 
 <script>
-import Default from './components/Default.vue';
+import DefaultLayout from './components/DefaultLayout.vue';
 
 export default {
   name: 'App',
   components: {
-    Default,
+    DefaultLayout,
   },
-}
+};
 </script>
 
 <style lang='scss'>

@@ -33,8 +33,8 @@
 
 <script>
 export default {
-  name: 'Homepage'
-}
+  name: 'HomePage'
+};
 </script>
 
 <style scoped lang='scss'>

@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import Homepage from './pages/Homepage.vue';
-import Notfound from './pages/Notfound.vue';
-import Rank from './pages/Rank.vue';
+import HomePage from './pages/HomePage.vue';
+import NotFound from './pages/NotFound.vue';
+import RankPage from './pages/RankPage.vue';
 import ListFaculties from './pages/ListFaculties.vue';
 
 export default createRouter({
@@ -10,11 +10,11 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      component: Homepage
+      component: HomePage
     },
     {
       path: '/rank',
-      component: Rank
+      component: RankPage
     },
     {
       path: '/all-faculties',
@@ -22,7 +22,7 @@ export default createRouter({
     },
     {
       path: '/:pathMatch(.*)',
-      component: Notfound
+      component: NotFound
     }
   ]
 });

@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "env NODE_ENV=development webpack serve",
-    "build": "env NODE_ENV=production webpack build"
+    "build": "env NODE_ENV=production webpack build",
+    "lint": "eslint src --fix --ext .js,.vue"
   },
   "author": "Ram4GB",
   "license": "ISC",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "css-loader": "^6.7.1",
     "eslint": "^8.19.0",
+    "eslint-plugin-vue": "^9.2.0",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",

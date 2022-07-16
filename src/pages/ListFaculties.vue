@@ -1,7 +1,12 @@
 <template>
   <div>
     <h2>Danh sách khoa</h2>
-    <el-button @click="toggleDrawer" type="primary">Yêu cầu mới</el-button>
+    <el-button
+      type="primary"
+      @click="toggleDrawer"
+    >
+      Yêu cầu mới
+    </el-button>
     <el-descriptions
       :column="1"
       direction="vertical"
@@ -14,47 +19,102 @@
       >
         <p>
           Được duyệt:
-          <el-icon color="green" :size="20" v-if="faculty.isApproved"><SuccessFilled /></el-icon>
-          <el-icon color="red" :size="20" v-else><CircleCloseFilled /></el-icon>
+          <el-icon
+            v-if="faculty.isApproved"
+            color="green"
+            :size="20"
+          >
+            <SuccessFilled />
+          </el-icon>
+          <el-icon
+            v-else
+            color="red"
+            :size="20"
+          >
+            <CircleCloseFilled />
+          </el-icon>
         </p>
         <p>Số lượt tìm kiếm: {{ faculty.foundCount }}</p>
-        <p>Có thể tra cứu:
-          <el-icon color="green" :size="20" v-if="faculty.isAvailable"><SuccessFilled /></el-icon>
-          <el-icon color="red" :size="20" v-else><CircleCloseFilled /></el-icon>
+        <p>
+          Có thể tra cứu:
+          <el-icon
+            v-if="faculty.isAvailable"
+            color="green"
+            :size="20"
+          >
+            <SuccessFilled />
+          </el-icon>
+          <el-icon
+            v-else
+            color="red"
+            :size="20"
+          >
+            <CircleCloseFilled />
+          </el-icon>
         </p>
       </el-descriptions-item>
     </el-descriptions>
-    <el-drawer v-model="isShowDrawer" size="100%" direction="btt">
+    <el-drawer
+      v-model="isShowDrawer"
+      size="100%"
+      direction="btt"
+    >
       <el-form
-        :model="form"
         ref="formRef"
+        :model="form"
         size="large"
-        label-position='top'
+        label-position="top"
         status-icon
         :rules="rules"
       >
         <h2>Mẫu yêu cầu khoa & khóa mới</h2>
         <p>Nếu như bạn không tìm thấy khoa hoặc khóa của mình, bạn có thể tạo mới để tụi mình có thể hỗ trợ bạn.</p>
-        <el-form-item label="Mã khoa" prop="faculty">
-          <el-input v-model="form.faculty" placeholder="DCT" />
+        <el-form-item
+          label="Mã khoa"
+          prop="faculty"
+        >
+          <el-input
+            v-model="form.faculty"
+            placeholder="DCT"
+          />
         </el-form-item>
-        <el-form-item label="Khóa" prop="k">
-          <el-input-number  :controls="false" min="17" v-model="form.k" placeholder="17" />
+        <el-form-item
+          label="Khóa"
+          prop="k"
+        >
+          <el-input-number
+            v-model="form.k"
+            :controls="false"
+            min="17"
+            placeholder="17"
+          />
         </el-form-item>
-        <el-form-item label="6 số đầu của MSV" prop="prefixId">
-          <el-input maxlength="6" v-model="form.prefixId" placeholder="311741" />
+        <el-form-item
+          label="6 số đầu của MSV"
+          prop="prefixId"
+        >
+          <el-input
+            v-model="form.prefixId"
+            maxlength="6"
+            placeholder="311741"
+          />
         </el-form-item>
-        <el-button @click="handleSubmitForm(formRef)" type="primary">Gửi đi</el-button>
+        <el-button
+          type="primary"
+          @click="handleSubmitForm(formRef)"
+        >
+          Gửi đi
+        </el-button>
       </el-form>
     </el-drawer>
   </div>
 </template>
 
 <script>
-import { reactive, ref } from '@vue/reactivity'
+import { reactive, ref } from 'vue';
 import { handleError } from '../api/axios';
 import axios from '../api/axios';
-import { onMounted } from '@vue/runtime-core';
+import { onMounted } from 'vue';
 import { ElNotification } from 'element-plus';
 
 export default {
@@ -79,11 +139,11 @@ export default {
         type: 'number',
         trigger: 'blur',
       }
-    })
+    });
 
     const handleMounted = async () => {
       try {
-        const result = await axios.get('/all-points')
+        const result = await axios.get('/all-points');
 
         if(result.status === 200) {
           faculties.value = result.data.data;
@@ -91,11 +151,11 @@ export default {
       } catch (error) {
         handleError(error);
       }
-    }
+    };
 
     const toggleDrawer = () => {
-      isShowDrawer.value = !isShowDrawer.value
-    }
+      isShowDrawer.value = !isShowDrawer.value;
+    };
 
     const handleSubmitForm = () => {
       formRef.value.validate(async (valid) => {
@@ -115,19 +175,19 @@ export default {
             toggleDrawer();
             handleMounted();
 
-            form.faculty = ''
-            form.k = null
-            form.prefixId = ''
+            form.faculty = '';
+            form.k = null;
+            form.prefixId = '';
           }
         } catch (error) {
-          handleError(error)
+          handleError(error);
         }
-      })
-    }
+      });
+    };
 
     onMounted(() => {
       handleMounted();
-    })
+    });
     
     return {
       faculties,
@@ -137,9 +197,9 @@ export default {
       form,
       formRef,
       handleSubmitForm
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang='scss' scoped>

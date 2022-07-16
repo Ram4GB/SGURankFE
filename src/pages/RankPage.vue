@@ -6,14 +6,26 @@
       :model="form"
       :rules="rules"
       size="large"
-      label-position='top'
+      label-position="top"
       status-icon
     >
-      <el-form-item label="Mã sinh viên" prop="id">
-        <el-input placeholder="3117410001" v-model="form.id" />
+      <el-form-item
+        label="Mã sinh viên"
+        prop="id"
+      >
+        <el-input
+          v-model="form.id"
+          placeholder="3117410001"
+        />
       </el-form-item>
-      <el-form-item label="Khoa" prop="faculty">
-        <el-select placeholder="Chọn khoa" v-model="form.faculty">
+      <el-form-item
+        label="Khoa"
+        prop="faculty"
+      >
+        <el-select
+          v-model="form.faculty"
+          placeholder="Chọn khoa"
+        >
           <el-option
             v-for="item in faculties"
             :key="item.displayName"
@@ -36,18 +48,36 @@
         direction="vertical"
         border
       >
-        <el-descriptions-item label="Hạng">{{ rankUser.rank + 1 }}</el-descriptions-item>
-        <el-descriptions-item label="Mã sinh viên">{{ rankUser.id }}</el-descriptions-item>
-        <el-descriptions-item label="Học kì">{{ rankUser.semester }}</el-descriptions-item>
-        <el-descriptions-item label="Điểm TB tích lũy (hệ 4)">{{ rankUser.aveAccumulatedType4Raw }}</el-descriptions-item>
-        <el-descriptions-item label="Điểm TB tích lũy (hệ 10)">{{ rankUser.aveAccumulatedType10Raw }}</el-descriptions-item>
-        <el-descriptions-item label="Điểm TB học kì (hệ 4)">{{ rankUser.aveSemesterType4Raw }}</el-descriptions-item>
-        <el-descriptions-item label="Điểm TB học kì (hệ 10)">{{ rankUser.aveSemesterType10Raw }}</el-descriptions-item>
-        <el-descriptions-item label="Số tín chỉ tích lũy">{{ rankUser.accumulatedCreditsRaw }}</el-descriptions-item>
-        <el-descriptions-item label="Số tín chỉ đạt">{{ rankUser.creditsRaw }}</el-descriptions-item>
+        <el-descriptions-item label="Hạng">
+          {{ rankUser.rank + 1 }}
+        </el-descriptions-item>
+        <el-descriptions-item label="Mã sinh viên">
+          {{ rankUser.id }}
+        </el-descriptions-item>
+        <el-descriptions-item label="Học kì">
+          {{ rankUser.semester }}
+        </el-descriptions-item>
+        <el-descriptions-item label="Điểm TB tích lũy (hệ 4)">
+          {{ rankUser.aveAccumulatedType4Raw }}
+        </el-descriptions-item>
+        <el-descriptions-item label="Điểm TB tích lũy (hệ 10)">
+          {{ rankUser.aveAccumulatedType10Raw }}
+        </el-descriptions-item>
+        <el-descriptions-item label="Điểm TB học kì (hệ 4)">
+          {{ rankUser.aveSemesterType4Raw }}
+        </el-descriptions-item>
+        <el-descriptions-item label="Điểm TB học kì (hệ 10)">
+          {{ rankUser.aveSemesterType10Raw }}
+        </el-descriptions-item>
+        <el-descriptions-item label="Số tín chỉ tích lũy">
+          {{ rankUser.accumulatedCreditsRaw }}
+        </el-descriptions-item>
+        <el-descriptions-item label="Số tín chỉ đạt">
+          {{ rankUser.creditsRaw }}
+        </el-descriptions-item>
       </el-descriptions>
       <h2>Top 5 cao nhất khóa</h2>
-        <el-descriptions
+      <el-descriptions
         :column="1"
         direction="vertical"
         border
@@ -66,16 +96,17 @@
 </template>
 
 <script>
-import { reactive, ref } from '@vue/reactivity';
+import { reactive, ref } from 'vue';
 import axios, { handleError } from '../api/axios';
-import { onMounted } from '@vue/runtime-core';
+import { onMounted } from 'vue';
 
 export default {
+  name: 'RankPage',
   setup() {
     const form = reactive({
         id: '',
         faculty: ''
-    })
+    });
     const rules = reactive({
       id: {
         required: true,
@@ -93,15 +124,15 @@ export default {
     const rankUser = ref(null);
 
     const handleSubmit = (formRef) => {
-      formRef.validate((valid, fields) => {
+      formRef.validate((valid) => {
         if(!valid) {
           return;
         }
 
         const item = faculties.value.find((i) => i.name === form.faculty);
         getRank(form.id, item.faculty, item.k);
-      })
-    }
+      });
+    };
 
     const getFaculties = async () => {
       try {
@@ -113,7 +144,7 @@ export default {
       } catch (error) {
         handleError(error);
       }
-    }
+    };
 
     const getRank = async (idStudent, faculty, k) => {
       try {
@@ -131,11 +162,11 @@ export default {
       } catch (error) {
         handleError(error);
       }
-    }
+    };
 
     onMounted(async () => {
       await getFaculties();
-    })
+    });
 
     return {
       form,
@@ -144,9 +175,9 @@ export default {
       faculties,
       rankUser,
       handleSubmit
-    }
+    };
   },
-}
+};
 </script>
 
 <style lang='scss' scoped>
