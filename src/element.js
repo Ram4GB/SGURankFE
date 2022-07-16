@@ -18,7 +18,10 @@ import {
   ElTableColumn,
   ElIcon,
   ElDrawer,
-  ElInputNumber
+  ElInputNumber,
+  ElResult,
+  ElCollapse,
+  ElCollapseItem
 } from 'element-plus';
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
@@ -45,6 +48,9 @@ export default (app) => {
   app.component('ElIcon', ElIcon);
   app.component('ElDrawer', ElDrawer);
   app.component('ElInputNumber', ElInputNumber);
+  app.component('ElResult', ElResult);
+  app.component('ElCollapse', ElCollapse);
+  app.component('ElCollapseItem', ElCollapseItem);
 
   for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component);

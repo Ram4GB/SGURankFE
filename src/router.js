@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage.vue';
 import NotFound from './pages/NotFound.vue';
 import RankPage from './pages/RankPage.vue';
 import ListFaculties from './pages/ListFaculties.vue';
+import QA from './pages/QA.vue';
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -21,8 +22,12 @@ export default createRouter({
       component: ListFaculties
     },
     {
+      path: '/qa',
+      component: QA
+    },
+    {
       path: '/:pathMatch(.*)',
       component: NotFound
-    }
+    },
   ]
 });

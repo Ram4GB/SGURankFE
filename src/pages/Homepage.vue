@@ -14,17 +14,24 @@
         </el-button>
       </router-link>
     </div>
-    <div class="mb-15">
-      <router-link to="about-us">
+    <!-- <div class="mb-15">
+      <router-link to="/about-us">
         <el-button type="primary">
           Về chúng tôi
         </el-button>
       </router-link>
-    </div>
+    </div> -->
     <div class="mb-15">
-      <router-link to="feedback">
+      <router-link to="/feedback">
         <el-button type="primary">
           Gửi đánh giá
+        </el-button>
+      </router-link>
+    </div>
+    <div class="mb-15">
+      <router-link to="/qa">
+        <el-button type="primary">
+          Câu hỏi thường gặp
         </el-button>
       </router-link>
     </div>

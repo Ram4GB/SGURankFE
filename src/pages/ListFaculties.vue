@@ -74,7 +74,7 @@
         :rules="rules"
       >
         <h2>Mẫu yêu cầu khoa & khóa mới</h2>
-        <p>Nếu như bạn không tìm thấy khoa hoặc khóa của mình, bạn có thể tạo mới để tụi mình có thể hỗ trợ bạn. Trễ nhất là 1 ngày sẽ có dữ liệu diêm. Cảm ơn bạn nhé</p>
+        <p>Nếu như bạn không tìm thấy khoa hoặc khóa của mình, bạn có thể tạo mới để tụi mình có thể hỗ trợ bạn. Trễ nhất là 1 ngày sẽ có dữ liệu điểm. Cảm ơn bạn nhé</p>
         <el-form-item
           label="Mã khoa"
           prop="faculty"
