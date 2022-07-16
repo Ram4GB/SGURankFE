@@ -1,19 +1,25 @@
 <template>
   <div>
     <h2>Danh sách khoa</h2>
-    <el-button
-      type="primary"
-      @click="toggleDrawer"
-    >
-      Yêu cầu mới
-    </el-button>
+    <div>
+      <el-input 
+        v-model="searchString" 
+        placeholder="Tìm kiếm: dct, k17, dct k17,..." 
+      />
+      <el-button
+        type="primary"
+        @click="toggleDrawer"
+      >
+        Yêu cầu mới
+      </el-button>
+    </div>
     <el-descriptions
       :column="1"
       direction="vertical"
       border
     >
       <el-descriptions-item
-        v-for="faculty in faculties"
+        v-for="faculty in finalFaculties"
         :key="faculty.name"
         :label="`${faculty.displayName} HK2 2021-2022`"
       >
@@ -68,13 +74,14 @@
         :rules="rules"
       >
         <h2>Mẫu yêu cầu khoa & khóa mới</h2>
-        <p>Nếu như bạn không tìm thấy khoa hoặc khóa của mình, bạn có thể tạo mới để tụi mình có thể hỗ trợ bạn.</p>
+        <p>Nếu như bạn không tìm thấy khoa hoặc khóa của mình, bạn có thể tạo mới để tụi mình có thể hỗ trợ bạn. Trễ nhất là 1 ngày sẽ có dữ liệu diêm. Cảm ơn bạn nhé</p>
         <el-form-item
           label="Mã khoa"
           prop="faculty"
         >
           <el-input
             v-model="form.faculty"
+            :maxlength="3"
             placeholder="DCT"
           />
         </el-form-item>
@@ -111,7 +118,7 @@
 </template>
 
 <script>
-import { reactive, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import { handleError } from '../api/axios';
 import axios from '../api/axios';
 import { onMounted } from 'vue';
@@ -139,6 +146,13 @@ export default {
         type: 'number',
         trigger: 'blur',
       }
+    });
+    const searchString = ref('');
+    const finalFaculties = computed(() => {
+      return faculties.value.filter((item) => {
+        return item.displayName.toLowerCase().includes(searchString.value.toLowerCase())
+          || searchString.value.toLowerCase().includes(item.displayName.toLowerCase());
+      });
     });
 
     const handleMounted = async () => {
@@ -196,7 +210,9 @@ export default {
       rules,
       form,
       formRef,
-      handleSubmitForm
+      handleSubmitForm,
+      searchString,
+      finalFaculties
     };
   }
 };
@@ -204,6 +220,7 @@ export default {
 
 <style lang='scss' scoped>
 .el-button {
+  margin-top: 1px;
   margin-bottom: 10px;
   width: 100%;
   padding: 25px 16px;

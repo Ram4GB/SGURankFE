@@ -49,7 +49,7 @@
         border
       >
         <el-descriptions-item label="Hạng">
-          {{ rankUser.rank + 1 }}
+          {{ rankUser.rank }}
         </el-descriptions-item>
         <el-descriptions-item label="Mã sinh viên">
           {{ rankUser.id }}
