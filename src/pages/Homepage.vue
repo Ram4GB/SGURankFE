@@ -1,31 +1,33 @@
 <template>
-  <div class="mb-15">
-    <router-link to="/rank">
-      <el-button type="primary">
-        Tra cứu điểm thi
-      </el-button>
-    </router-link>
-  </div>
-  <div class="mb-15">
-    <router-link to="/all-faculties">
-      <el-button type="primary">
-        Danh sách các khoa
-      </el-button>
-    </router-link>
-  </div>
-  <div class="mb-15">
-    <router-link to="about-us">
-      <el-button type="primary">
-        Về chúng tôi
-      </el-button>
-    </router-link>
-  </div>
-  <div class="mb-15">
-    <router-link to="feedback">
-      <el-button type="primary">
-        Gửi đánh giá
-      </el-button>
-    </router-link>
+  <div>
+    <div class="mb-15">
+      <router-link to="/rank">
+        <el-button type="primary">
+          Tra cứu điểm thi
+        </el-button>
+      </router-link>
+    </div>
+    <div class="mb-15">
+      <router-link to="/all-faculties">
+        <el-button type="primary">
+          Danh sách các khoa
+        </el-button>
+      </router-link>
+    </div>
+    <div class="mb-15">
+      <router-link to="about-us">
+        <el-button type="primary">
+          Về chúng tôi
+        </el-button>
+      </router-link>
+    </div>
+    <div class="mb-15">
+      <router-link to="feedback">
+        <el-button type="primary">
+          Gửi đánh giá
+        </el-button>
+      </router-link>
+    </div>
   </div>
 </template>
 

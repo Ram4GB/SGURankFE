@@ -1,51 +1,53 @@
 <template>
-  <h2>Danh sách khoa</h2>
-  <el-button @click="toggleDrawer" type="primary">Yêu cầu mới</el-button>
-  <el-descriptions
-    :column="1"
-    direction="vertical"
-    border
-  >
-    <el-descriptions-item 
-      v-for="faculty in faculties" 
-      :key="faculty.name" 
-      :label="`${faculty.displayName} HK2 2021-2022`"
+  <div>
+    <h2>Danh sách khoa</h2>
+    <el-button @click="toggleDrawer" type="primary">Yêu cầu mới</el-button>
+    <el-descriptions
+      :column="1"
+      direction="vertical"
+      border
     >
-      <p>
-        Được duyệt:
-        <el-icon color="green" :size="20" v-if="faculty.isApproved"><SuccessFilled /></el-icon>
-        <el-icon color="red" :size="20" v-else><CircleCloseFilled /></el-icon>
-      </p>
-      <p>Số lượt tìm kiếm: {{ faculty.foundCount }}</p>
-      <p>Có thể tra cứu: 
-        <el-icon color="green" :size="20" v-if="faculty.isAvailable"><SuccessFilled /></el-icon>
-        <el-icon color="red" :size="20" v-else><CircleCloseFilled /></el-icon>
-      </p>
-    </el-descriptions-item>
-  </el-descriptions>
-  <el-drawer v-model="isShowDrawer" size="100%" direction="btt">
-    <el-form 
-      :model="form" 
-      ref="formRef"
-      size="large"
-      label-position='top'
-      status-icon
-      :rules="rules"
-    >
-      <h2>Mẫu yêu cầu khoa & khóa mới</h2>
-      <p>Nếu như bạn không tìm thấy khoa hoặc khóa của mình, bạn có thể tạo mới để tụi mình có thể hỗ trợ bạn.</p>
-      <el-form-item label="Mã khoa" prop="faculty">
-        <el-input v-model="form.faculty" placeholder="DCT" />
-      </el-form-item>
-      <el-form-item label="Khóa" prop="k">
-        <el-input-number  :controls="false" min="17" v-model="form.k" placeholder="17" />
-      </el-form-item>
-      <el-form-item label="6 số đầu của MSV" prop="prefixId">
-        <el-input maxlength="6" v-model="form.prefixId" placeholder="311741" />
-      </el-form-item>
-      <el-button @click="handleSubmitForm(formRef)" type="primary">Gửi đi</el-button>
-    </el-form>
-  </el-drawer>
+      <el-descriptions-item
+        v-for="faculty in faculties"
+        :key="faculty.name"
+        :label="`${faculty.displayName} HK2 2021-2022`"
+      >
+        <p>
+          Được duyệt:
+          <el-icon color="green" :size="20" v-if="faculty.isApproved"><SuccessFilled /></el-icon>
+          <el-icon color="red" :size="20" v-else><CircleCloseFilled /></el-icon>
+        </p>
+        <p>Số lượt tìm kiếm: {{ faculty.foundCount }}</p>
+        <p>Có thể tra cứu:
+          <el-icon color="green" :size="20" v-if="faculty.isAvailable"><SuccessFilled /></el-icon>
+          <el-icon color="red" :size="20" v-else><CircleCloseFilled /></el-icon>
+        </p>
+      </el-descriptions-item>
+    </el-descriptions>
+    <el-drawer v-model="isShowDrawer" size="100%" direction="btt">
+      <el-form
+        :model="form"
+        ref="formRef"
+        size="large"
+        label-position='top'
+        status-icon
+        :rules="rules"
+      >
+        <h2>Mẫu yêu cầu khoa & khóa mới</h2>
+        <p>Nếu như bạn không tìm thấy khoa hoặc khóa của mình, bạn có thể tạo mới để tụi mình có thể hỗ trợ bạn.</p>
+        <el-form-item label="Mã khoa" prop="faculty">
+          <el-input v-model="form.faculty" placeholder="DCT" />
+        </el-form-item>
+        <el-form-item label="Khóa" prop="k">
+          <el-input-number  :controls="false" min="17" v-model="form.k" placeholder="17" />
+        </el-form-item>
+        <el-form-item label="6 số đầu của MSV" prop="prefixId">
+          <el-input maxlength="6" v-model="form.prefixId" placeholder="311741" />
+        </el-form-item>
+        <el-button @click="handleSubmitForm(formRef)" type="primary">Gửi đi</el-button>
+      </el-form>
+    </el-drawer>
+  </div>
 </template>
 
 <script>

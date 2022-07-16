@@ -1,5 +1,7 @@
 <template>
-  Notfound
+  <div>
+    Notfound
+  </div>
 </template>
 
 <script>
