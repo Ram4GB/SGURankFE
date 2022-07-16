@@ -13,7 +13,9 @@ import {
   ElSelect,
   ElOption,
   ElDescriptions,
-  ElDescriptionsItem
+  ElDescriptionsItem,
+  ElTable,
+  ElTableColumn
 } from 'element-plus';
 
 export default (app) => {
@@ -32,4 +34,6 @@ export default (app) => {
   app.component('ElOption', ElOption);
   app.component('ElDescriptions', ElDescriptions);
   app.component('ElDescriptionsItem', ElDescriptionsItem);
+  app.component('ElTable', ElTable);
+  app.component('ElTableColumn', ElTableColumn);
 };

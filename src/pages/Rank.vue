@@ -29,19 +29,45 @@
   <h2>Kết quả</h2>
   <el-descriptions 
     :column="1" 
-    :accordion="true"
-    direction="horizontal"
+    direction="vertical"
     border
   >
     <el-descriptions-item label="Hạng">120/500</el-descriptions-item>
     <el-descriptions-item label="Mã sinh viên">3117410027</el-descriptions-item>
     <el-descriptions-item label="Học kì">HK2 Năm 2021-2022</el-descriptions-item>
-    <el-descriptions-item label="Điểm trung bình tích lũy (hệ 4)">4.0</el-descriptions-item>
-    <el-descriptions-item label="Điểm trung bình tích lũy (hệ 10)">4.0</el-descriptions-item>
-    <el-descriptions-item label="Điểm trung bình học kì (hệ 4)">4.0</el-descriptions-item>
-    <el-descriptions-item label="Điểm trung bình học kì (hệ 10)">4.0</el-descriptions-item>
+    <el-descriptions-item label="Điểm TB tích lũy (hệ 4)">4.0</el-descriptions-item>
+    <el-descriptions-item label="Điểm TB tích lũy (hệ 10)">4.0</el-descriptions-item>
+    <el-descriptions-item label="Điểm TB học kì (hệ 4)">4.0</el-descriptions-item>
+    <el-descriptions-item label="Điểm TB học kì (hệ 10)">4.0</el-descriptions-item>
     <el-descriptions-item label="Số tín chỉ đạt">21</el-descriptions-item>
     <el-descriptions-item label="Số tín chỉ tích lũy">41</el-descriptions-item>
+  </el-descriptions>
+  <h2>Top 5 cao nhất khóa</h2>
+    <el-descriptions 
+    :column="1" 
+    direction="vertical"
+    border
+  >
+    <el-descriptions-item label="Hạng 1">
+      <p>MSV: 3117410027</p>
+      <p>ĐTB hệ 4: 4.0</p>
+    </el-descriptions-item>
+    <el-descriptions-item label="Hạng 2">
+      <p>MSV: 3117410027</p>
+      <p>ĐTB hệ 4: 4.0</p>
+    </el-descriptions-item>
+    <el-descriptions-item label="Hạng 3">
+      <p>MSV: 3117410027</p>
+      <p>ĐTB hệ 4: 4.0</p>
+    </el-descriptions-item>
+    <el-descriptions-item label="Hạng 4">
+      <p>MSV: 3117410027</p>
+      <p>ĐTB hệ 4: 4.0</p>
+    </el-descriptions-item>
+    <el-descriptions-item label="Hạng 5">
+      <p>MSV: 3117410027</p>
+      <p>ĐTB hệ 4: 4.0</p>
+    </el-descriptions-item>
   </el-descriptions>
 </template>
 
