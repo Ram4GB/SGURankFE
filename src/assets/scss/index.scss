@@ -27,17 +27,11 @@ a {
   color: #fff;
 }
 
-.el-button {
-  width: 100%;
-  padding: 25px 16px;
-  text-transform: uppercase;
-}
-
 .el-input__inner {
   padding: 25px 16px !important;
 }
 
-.el-select {
+.el-select, .el-input-number {
   width: 100%;
 }
 
@@ -45,9 +39,17 @@ a {
   font-weight: bold;
 }
 
+.el-descriptions__label {
+  color: #42b883 !important;
+}
+
 .container {
   max-width: 700px;
   margin: auto;
+}
+
+h1, h2 {
+  color: #42b883;
 }
 
 @for $i from 1 to 100 {

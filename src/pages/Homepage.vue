@@ -35,6 +35,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang='scss'>
+.el-button {
+  width: 100%;
+  padding: 25px 16px;
+  text-transform: uppercase;
+}
 </style>

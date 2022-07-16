@@ -10,6 +10,7 @@
   "author": "Ram4GB",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "element-plus": "^2.2.9",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2",
