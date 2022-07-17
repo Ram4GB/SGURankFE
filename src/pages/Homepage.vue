@@ -13,7 +13,7 @@
           type="primary"
           plain
         >
-          Danh sách các khoa
+          DS Khoa & Gửi yêu cầu
         </el-button>
       </router-link>
     </div>

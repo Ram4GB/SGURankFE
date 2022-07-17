@@ -18,22 +18,6 @@
           placeholder="3117410001"
         />
       </el-form-item>
-      <el-form-item
-        label="Khoa"
-        prop="faculty"
-      >
-        <el-select
-          v-model="form.faculty"
-          placeholder="Chọn khoa"
-        >
-          <el-option
-            v-for="item in faculties"
-            :key="item.displayName"
-            :label="item.displayName"
-            :value="item.name"
-          />
-        </el-select>
-      </el-form-item>
       <el-button
         type="primary"
         @click="handleSubmit(formRef)"
@@ -48,6 +32,9 @@
         direction="vertical"
         border
       >
+        <el-descriptions-item label="Khoa">
+          {{ faculty.displayName }}
+        </el-descriptions-item>
         <el-descriptions-item label="Hạng">
           {{ rankUser.rank }}
         </el-descriptions-item>
@@ -99,29 +86,25 @@
 import { reactive, ref } from 'vue';
 import axios, { handleError } from '../api/axios';
 import { onMounted } from 'vue';
+import { ElNotification } from 'element-plus';
 
 export default {
   name: 'RankPage',
   setup() {
     const form = reactive({
-        id: '',
-        faculty: ''
+        id: ''
     });
     const rules = reactive({
       id: {
         required: true,
         message: 'Mời bạn điền mã sinh viên',
         trigger: 'blur'
-      },
-      faculty: {
-        required: true,
-        message: 'Mời bạn chọn khoa',
-        trigger: 'change'
       }
     });
     const formRef = ref(null);
     const faculties = ref([]);
     const rankUser = ref(null);
+    const faculty = ref(null);
 
     const handleSubmit = (formRef) => {
       formRef.validate((valid) => {
@@ -129,7 +112,17 @@ export default {
           return;
         }
 
-        const item = faculties.value.find((i) => i.name === form.faculty);
+        const item = faculties.value.find((i) => i.prefixId === form.id.slice(0, 6));
+
+        if(!item) {
+          return ElNotification({
+            message: 'Hiện tại khoe của bạn chưa có trong cơ sở dữ liệu. Bạn vui lòng gửi yêu cầu giúp tụi mình nhé.',
+            type: 'error'
+          });
+        }
+
+        faculty.value = item;
+
         getRank(form.id, item.faculty, item.k);
       });
     };
@@ -141,6 +134,7 @@ export default {
         if(result.status === 200) {
           faculties.value = result.data.data;
         }
+        
       } catch (error) {
         handleError(error);
       }
@@ -173,6 +167,7 @@ export default {
       rules,
       formRef,
       faculties,
+      faculty,
       rankUser,
       handleSubmit
     };
