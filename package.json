@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "env NODE_ENV=development webpack serve",
-    "build": "env NODE_ENV=production webpack build",
+    "build": "env NODE_ENV=production webpack build && cp -R public/favicon dist/",
     "lint": "eslint src --fix --ext .js,.vue"
   },
   "author": "Ram4GB",
