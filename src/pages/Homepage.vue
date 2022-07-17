@@ -9,7 +9,10 @@
     </div>
     <div class="mb-15">
       <router-link to="/all-faculties">
-        <el-button type="primary">
+        <el-button
+          type="primary"
+          plain
+        >
           Danh sách các khoa
         </el-button>
       </router-link>
@@ -17,21 +20,27 @@
     <!-- <div class="mb-15">
       <router-link to="/about-us">
         <el-button type="primary">
-          Về chúng tôi
+          Về tụi mình
         </el-button>
       </router-link>
     </div> -->
     <div class="mb-15">
-      <router-link to="/feedback">
+      <router-link to="/qa">
         <el-button type="primary">
-          Gửi đánh giá
+          Câu hỏi thường gặp
         </el-button>
       </router-link>
     </div>
     <div class="mb-15">
-      <router-link to="/qa">
-        <el-button type="primary">
-          Câu hỏi thường gặp
+      <router-link
+        type="primary"
+        to="/contact-us"
+      >
+        <el-button
+          type="primary"
+          plain
+        >
+          Liên hệ
         </el-button>
       </router-link>
     </div>
