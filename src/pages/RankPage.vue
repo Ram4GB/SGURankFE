@@ -85,7 +85,7 @@
         <el-descriptions-item
           v-for="(user, index) in rankUser.top5"
           :key="user.id"
-          :label="`Hạng ${index}`"
+          :label="`Hạng ${index + 1}`"
         >
           <p>MSV: {{ user.id }}</p>
           <p>Điểm TB học kì (hệ 4): {{ user.aveSemesterType4Raw }}</p>
