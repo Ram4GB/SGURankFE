@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "env NODE_ENV=development webpack serve",
-    "build": "ls -la && rm -rf dist/ && env NODE_ENV=production ./node_modules/webpack/bin/webpack.js build --config webpack.config.js && cp -a public/. dist/",
+    "build": "ls -la -R src && rm -rf dist/ && env NODE_ENV=production ./node_modules/webpack/bin/webpack.js build --config webpack.config.js && cp -a public/. dist/",
     "lint": "eslint src --fix --ext .js,.vue",
     "prepare": "husky install",
     "serve": "serve -s dist -p 8080",
