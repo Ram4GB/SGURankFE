@@ -122,7 +122,7 @@ import { computed, reactive, ref } from 'vue';
 import { handleError } from '../api/axios';
 import axios from '../api/axios';
 import { onMounted } from 'vue';
-import { ElNotification } from 'element-plus';
+import { ElLoading, ElNotification } from 'element-plus';
 
 export default {
   setup() {
@@ -157,11 +157,18 @@ export default {
 
     const handleMounted = async () => {
       try {
+        const loading = ElLoading.service({
+          lock: true,
+          text: 'Loading',
+          background: 'rgba(0, 0, 0, 0.7)',
+        });
         const result = await axios.get('/all-points');
 
         if(result.status === 200) {
           faculties.value = result.data.data;
         }
+
+        loading.close();
       } catch (error) {
         handleError(error);
       }

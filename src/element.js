@@ -21,7 +21,9 @@ import {
   ElInputNumber,
   ElResult,
   ElCollapse,
-  ElCollapseItem
+  ElCollapseItem,
+  ElLoading,
+  ElLoadingDirective
 } from 'element-plus';
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
@@ -51,6 +53,8 @@ export default (app) => {
   app.component('ElResult', ElResult);
   app.component('ElCollapse', ElCollapse);
   app.component('ElCollapseItem', ElCollapseItem);
+  app.component('ElLoading', ElLoading);
+  app.directive('loading', ElLoadingDirective);
 
   for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component);
