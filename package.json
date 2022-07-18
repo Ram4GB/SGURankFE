@@ -8,7 +8,8 @@
     "build": "rm -rf dist/ && env NODE_ENV=production webpack build && cp -a public/. dist/",
     "lint": "eslint src --fix --ext .js,.vue",
     "prepare": "husky install",
-    "serve": "serve -s dist -p 8080"
+    "serve": "serve -s dist -p 8080",
+    "test": "mocha"
   },
   "author": "Ram4GB",
   "license": "ISC",
@@ -21,11 +22,13 @@
     "webpack": "^5.73.0"
   },
   "devDependencies": {
+    "chai": "^4.3.6",
     "css-loader": "^6.7.1",
     "eslint": "^8.19.0",
     "eslint-plugin-vue": "^9.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.0",
+    "mocha": "^10.0.0",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
     "serve": "^14.0.1",
