@@ -46,7 +46,7 @@ After you run ``npm run build``, webpack will create ``dist`` folder. If you are
 - Manage all tag and debug if analyzic tag is working correctly. We use g4 to track person's behavior such as: scroll, view, click,... [[Tag management](https://tagmanager.google.com/#/home) ]
 - This is a place where we generate a measure code id & stream id to add it into the tag management. [[ID Analyzic](https://analytics.google.com/analytics/web/?authuser=0&hl=en#/a160915242p322440600/admin/streams/table/3843323327)]
 
-> [Hint]: Please turn off fireware extension before check the analyses
+> [Hint]: Please turn off fireware extension before checking the analyses
 
 ## Related post
 
