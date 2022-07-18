@@ -9,7 +9,7 @@
     "lint": "eslint src --fix --ext .js,.vue",
     "prepare": "husky install",
     "serve": "serve -s dist -p 8080",
-    "test": "mocha"
+    "test:unit": "mocha"
   },
   "author": "Ram4GB",
   "license": "ISC",

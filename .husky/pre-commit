@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint
-
-npm run test
+# use github actions to check lint instead
+# too slow to check locally
+# npm run lint
