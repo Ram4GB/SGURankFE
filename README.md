@@ -5,6 +5,7 @@
 Now the app is started at 
 
 url1: https://www.ram4gb.site/#/
+
 backup: https://sgu-rank-fe.vercel.app/#/
 
 <div style="text-align: center">
