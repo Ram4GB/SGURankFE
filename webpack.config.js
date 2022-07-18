@@ -54,5 +54,8 @@ module.exports = {
       template: './src/index.html'
     })
   ],
-  devtool: process.env.NODE_ENV === 'production' ? 'eval' : 'source-map'
+  devtool: process.env.NODE_ENV === 'production' ? 'eval' : 'source-map',
+  resolve: {
+    extensions: ['.vue', '.js', '.png', '.svg', '.jpg', '.jpeg', '.gif', '.scss'],
+  }
 }
