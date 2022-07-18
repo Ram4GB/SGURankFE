@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "env NODE_ENV=development webpack serve",
     "build": "rm -rf dist/ && env NODE_ENV=production webpack build && cp -a public/. dist/",
-    "lint": "eslint src --fix --ext .js,.vue"
+    "lint": "eslint src --fix --ext .js,.vue",
+    "prepare": "husky install"
   },
   "author": "Ram4GB",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
     "element-plus": "^2.2.9",
+    "husky": "^8.0.1",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2",
     "webpack": "^5.73.0"
@@ -28,7 +30,8 @@
     "vue-style-loader": "^4.1.3",
     "vue-template-compiler": "^2.7.5",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.9.3"
+    "webpack-dev-server": "^4.9.3",
+    "husky": "^8.0.0"
   },
   "engines": {
     "node": "16"

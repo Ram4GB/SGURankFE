@@ -116,7 +116,7 @@ export default {
 
         if(!item) {
           return ElNotification({
-            message: 'Hiện tại khoe của bạn chưa có trong cơ sở dữ liệu. Bạn vui lòng gửi yêu cầu giúp tụi mình nhé.',
+            message: 'Hiện tại khoa của bạn chưa có trong cơ sở dữ liệu. Bạn vui lòng gửi yêu cầu giúp tụi mình nhé.',
             type: 'error'
           });
         }
