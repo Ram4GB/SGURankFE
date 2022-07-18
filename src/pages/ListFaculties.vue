@@ -138,13 +138,12 @@ export default {
       faculty: {
         required: true,
         message: 'Mời bạn điền mã khoa',
-        trigger: 'blur'
+        trigger: 'change'
       },
       k: {
         required: true,
         message: 'Mời bạn điền khóa',
-        type: 'number',
-        trigger: 'blur',
+        trigger: 'change',
       }
     });
     const searchString = ref('');
@@ -159,7 +158,7 @@ export default {
       try {
         const loading = ElLoading.service({
           lock: true,
-          text: 'Loading',
+          text: 'Đang tải',
           background: 'rgba(0, 0, 0, 0.7)',
         });
         const result = await axios.get('/all-points');

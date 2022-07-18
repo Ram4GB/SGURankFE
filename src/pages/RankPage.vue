@@ -87,7 +87,7 @@
 import { reactive, ref } from 'vue';
 import axios, { handleError } from '../api/axios';
 import { onMounted } from 'vue';
-import { ElNotification } from 'element-plus';
+import { ElLoading, ElNotification } from 'element-plus';
 
 export default {
   name: 'RankPage',
@@ -99,7 +99,7 @@ export default {
       id: {
         required: true,
         message: 'Mời bạn điền mã sinh viên',
-        trigger: 'blur'
+        trigger: 'change'
       }
     });
     const formRef = ref(null);
@@ -142,7 +142,13 @@ export default {
     };
 
     const getRank = async (idStudent, faculty, k) => {
+      let loading = null;
       try {
+        loading = ElLoading.service({
+          lock: true,
+          text: 'Đang tải',
+          background: 'rgba(0, 0, 0, 0.7)',
+        });
         const result = await axios.get('/rank', {
           params: {
             faculty, 
@@ -154,13 +160,24 @@ export default {
         });
 
         rankUser.value = result.data.data;
+
+        loading.close();
       } catch (error) {
+        loading.close();
         handleError(error);
       }
     };
 
     onMounted(async () => {
+      const loading = ElLoading.service({
+          lock: true,
+          text: 'Đang tải',
+          background: 'rgba(0, 0, 0, 0.7)',
+      });
+
       await getFaculties();
+
+      loading.close();
     });
 
     return {
