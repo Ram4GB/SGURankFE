@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import HomePage from './pages/HomePage.vue';
-import NotFound from './pages/NotFound.vue';
+import HomePage from './pages/Homepage.vue';
+import NotFound from './pages/Notfound.vue';
 import RankPage from './pages/RankPage.vue';
 import ListFaculties from './pages/ListFaculties.vue';
 import QA from './pages/QA.vue';
