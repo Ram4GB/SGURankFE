@@ -15,6 +15,7 @@
       >
         <el-input
           v-model="form.id"
+          maxlength="10"
           placeholder="3117410001"
         />
       </el-form-item>
