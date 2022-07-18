@@ -52,6 +52,12 @@ After you run ``npm run build``, webpack will create ``dist`` folder. If you are
 
 Old version of this project, you can find out in [https://github.com/Ram4GB/fs-search-rank-k17-sguni]
 
+## A number of read/write data in one day (Firebase)
+![image](https://user-images.githubusercontent.com/43853507/179567767-5030b2c1-7979-48a9-b355-3d184191b6e0.png)
+
+## A number of read/write data in one hour (Firebase)
+![image](https://user-images.githubusercontent.com/43853507/179567938-67e317f0-4f51-4e2b-8022-2806a0ebd7d6.png)
+
 ## Contributors
 
 - Huy Nguyen [https://github.com/tortoise10h]
