@@ -17,6 +17,7 @@
           v-model="form.id"
           maxlength="10"
           placeholder="3117410001"
+          @keypress.enter="handleEnterInput($event, formRef)"
         />
       </el-form-item>
       <el-button
@@ -107,6 +108,12 @@ export default {
     const rankUser = ref(null);
     const faculty = ref(null);
 
+    const handleEnterInput = (e, formRef) => {
+      e.preventDefault();
+
+      handleSubmit(formRef);
+    };
+
     const handleSubmit = (formRef) => {
       formRef.validate((valid) => {
         if(!valid) {
@@ -187,7 +194,8 @@ export default {
       faculties,
       faculty,
       rankUser,
-      handleSubmit
+      handleSubmit,
+      handleEnterInput
     };
   },
 };
