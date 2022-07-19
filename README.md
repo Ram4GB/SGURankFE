@@ -58,6 +58,12 @@ Old version of this project, you can find out in [https://github.com/Ram4GB/fs-s
 ## A number of read/write data in one hour (Firebase)
 ![image](https://user-images.githubusercontent.com/43853507/179567938-67e317f0-4f51-4e2b-8022-2806a0ebd7d6.png)
 
+## Some related analyzic images
+![image](https://user-images.githubusercontent.com/43853507/179688040-b563fe79-ad5b-43d1-9915-c3fea539d25e.png)
+
+![image](https://user-images.githubusercontent.com/43853507/179688059-094f6ae2-cc77-41cd-9f83-a27a2f1b9ec9.png)
+
+
 ## Contributors
 
 - Huy Nguyen [https://github.com/tortoise10h]
