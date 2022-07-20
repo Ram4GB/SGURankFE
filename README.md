@@ -63,6 +63,9 @@ Old version of this project, you can find out in [https://github.com/Ram4GB/fs-s
 
 ![image](https://user-images.githubusercontent.com/43853507/179688059-094f6ae2-cc77-41cd-9f83-a27a2f1b9ec9.png)
 
+## Analyzic file
+
+https://github.com/Ram4GB/SGURankFE/blob/master/analyzic.md
 
 ## Contributors
 
