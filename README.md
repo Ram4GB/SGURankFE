@@ -65,6 +65,8 @@ Backend source [https://github.com/Ram4GB/CloneSGURankBE]
 
 ![image](https://user-images.githubusercontent.com/43853507/179688059-094f6ae2-cc77-41cd-9f83-a27a2f1b9ec9.png)
 
+![image](https://user-images.githubusercontent.com/43853507/180363302-b273e322-82d8-47d1-b66b-666853098f7a.png)
+
 ## Analyzic file
 
 https://github.com/Ram4GB/SGURankFE/blob/master/analyzic.md
