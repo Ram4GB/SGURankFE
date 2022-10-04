@@ -76,3 +76,7 @@ https://github.com/Ram4GB/SGURankFE/blob/master/analyzic.md
 - Huy Nguyen [https://github.com/tortoise10h]
 - Bao Minh [https://github.com/minhminion]
 - Dinh Thien [https://github.com/truongdinhthien]
+
+## Another my projects
+
+- SGU Timetable [https://github.com/Ram4GB/SGUTimeTable]
