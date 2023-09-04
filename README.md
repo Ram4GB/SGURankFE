@@ -4,9 +4,7 @@
 
 Now the app is started at 
 
-Official url: https://www.ram4gb.site/#/
-
-Backup url: https://sgu-rank-fe.vercel.app/#/
+Official url: [https://www.ram4gb.site/#/](https://sgu-rank-fe.vercel.app/#/)
 
 <div style="text-align: center">
   <img src="./src/assets/images/8.png" />
